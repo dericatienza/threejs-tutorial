@@ -2,6 +2,13 @@ var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     sass = require('gulp-sass');
 
+
+gulp.task('html', function () {
+    return gulp.src('index.html')
+        .pipe(gulp.dest('dist'))
+        .pipe(connect.reload());
+})
+
 gulp.task('scripts', function () {
     return gulp.src('./src/js/app.js')
         .pipe(browserify())
