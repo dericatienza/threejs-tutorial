@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp'),
-    runSequence = require('run-sequence'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean'),
     browserify = require('gulp-browserify'),
@@ -17,7 +16,8 @@ var paths = {
 
 gulp.task('clean', function () {
     return gulp.src(paths.dist, {
-            read: false
+            read: false,
+            allowEmpty: true
         })
         .pipe(clean());
 });
